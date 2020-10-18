@@ -14,7 +14,7 @@ namespace UdemyNLayerProject.Core.Repositories
         Task<IEnumerable<TEntity>> GetAllAsync();
 
         //find(x=>x.id=23)
-        Task<IEnumerable<TEntity>> Find(Expression<Func<TEntity, bool>> predicate);
+        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
 
         // category.SingleOrDefaultAsync(x=> x.name="kalem")
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
@@ -22,7 +22,7 @@ namespace UdemyNLayerProject.Core.Repositories
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
-        void RemoveRange(IEnumerable<TEntity> entity);
+        void RemoveRange(IEnumerable<TEntity> entities);
         TEntity Update(TEntity entity);
     }
 }
