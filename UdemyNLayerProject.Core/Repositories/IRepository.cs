@@ -14,7 +14,7 @@ namespace UdemyNLayerProject.Core.Repositories
         Task<IEnumerable<TEntity>> GetAllAsync();
 
         //find(x=>x.id=23)
-        IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> predicate);
 
         // category.SingleOrDefaultAsync(x=> x.name="kalem")
         Task<TEntity> SingleOrDefaultAsync(Expression<Func<TEntity, bool>> predicate);
